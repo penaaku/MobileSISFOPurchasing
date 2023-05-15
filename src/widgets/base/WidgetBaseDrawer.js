@@ -7,6 +7,7 @@ import { Text } from "react-native";
 import WidgetBaseSidebar from "./WidgetBaseSidebar";
 import { ContextUserAuthentication } from "../../context/ContextUser";
 import { RouterBarangAuthenticated } from "../../routers/RouterBarang";
+import { RouterPemasokAuthenticated } from "../../routers/RouterPemasok";
 
 const Drawer = createDrawerNavigator();
 
@@ -51,6 +52,13 @@ export default function WidgetBaseDrawer() {
                 }}
                 name="RouterBarang"
                 component={RouterBarangAuthenticated}
+              />
+              <Drawer.Screen
+                options={{
+                  drawerLabel: "Pemasok",
+                }}
+                name="RouterPemasok"
+                component={RouterPemasokAuthenticated}
               />
               <Drawer.Screen
                 options={{
