@@ -38,4 +38,24 @@ export function ServiceBarangCreate(payload) {
   });
 }
 
+export function ServiceBarangEdit(payload) {
+  return new Promise(async (resolve, reject) => {
+    const config = {
+      headers: {
+        "x-access-token": await AsyncStorage.getItem("@token"),
+      },
+    };
+
+    ServiceBaseRequest.put(
+      `${CONFIG_BASE_API_URL}/barang/${payload.kodeBarang}`,
+      payload,
+      config
+    )
+      .then((response) => {
+        resolve(response.data);
+      })
+      .catch((error) => reject(error));
+  });
+}
+
 
