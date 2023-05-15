@@ -1,19 +1,7 @@
-import 'react-native-gesture-handler';
-
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-// import { Drawer } from 'react-native-paper'
-import ScreenUserLogin from './src/screens/user/ScreenUserLogin';
-
-const Drawer = createDrawerNavigator();
+import "react-native-gesture-handler";
+import * as React from "react";
+import WidgetBaseDrawer from "./src/widgets/base/WidgetBaseDrawer";
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="ScreenUserLogin" component={ScreenUserLogin}/>
-
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
+  return <WidgetBaseDrawer />;
 }
